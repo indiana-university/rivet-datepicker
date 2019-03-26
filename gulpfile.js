@@ -165,6 +165,12 @@ function serve(callback) {
   callback();
 }
 
+exports.buildDocs = series(
+  compileHTML,
+  compileSass,
+  compileJS
+);
+
 exports.release = series(
   compileHTML,
   compileJS,
