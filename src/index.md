@@ -2,7 +2,7 @@
 layout: "layouts/base.njk"
 title: Rivet datepicker
 description: Date entry patterns for Rivet including a calendar datepicker
-status: prototype
+status: alpha
 ---
 [Source](./) | [Test case](./test-case)
 ## Introduction
