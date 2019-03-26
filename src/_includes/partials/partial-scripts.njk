@@ -1,0 +1,39 @@
+<script>
+hljs.initHighlightingOnLoad();
+
+function formatRivetDate (date) {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return month + '-' + day + '-' + year;
+}
+
+const startDate = new RivetDatepicker({
+  field: document.getElementById('start'),
+  yearRange: [1950, 2019],
+  toString: function(date, format) {
+    return formatRivetDate(date);
+  }
+});
+
+const endDate = new RivetDatepicker({
+  field: document.getElementById('end'),
+  toString: function(date, format) {
+    return formatRivetDate(date);
+  }
+});
+
+const timeStart = new RivetDatepicker({
+  field: document.getElementById('time-demo-start-day'),
+  toString: function(date, format) {
+    return formatRivetDate(date);
+  }
+});
+
+const timeEnd = new RivetDatepicker({
+  field: document.getElementById('time-demo-end-day'),
+  toString: function(date, format) {
+    return formatRivetDate(date);
+  }
+});
+</script>

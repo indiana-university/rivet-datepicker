@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://assets.uits.iu.edu/css/rivet/1.1.0/rivet.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+  <link rel="stylesheet" href="./css/rivet-datepicker.css">
+  {% include "demo-styles.njk" %}
+</head>
+<body>
+  <div class="rvt-container rvt-container--center rvt-container--sophomore rvt-m-top-xxl rvt-m-bottom-xxl rvt-typeset">
+    <span class="rvt-text-uppercase rvt-text-bold rvt-color-orange">{{ status }}</span>
+    <h1 class="rvt-m-top-remove">{{ title }}</h1>
+    <p class="rvt-m-top-xxs rvt-m-bottom-xxl rvt-ts-20">{{ description }}</p>
+    <div class="rvt-grid">
+      <div class="rvt-grid__item-9-md-up" id="demo-container">
+        {{ layoutContent | safe }}
+      </div>
+    </div>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <script src="https://assets.uits.iu.edu/javascript/rivet/1.3.0/rivet.min.js"></script>
+  <script src="./js/rivet-datepicker.js"></script>
+  {% include "partials/partial-scripts.njk" %}
+</body>
+</html>

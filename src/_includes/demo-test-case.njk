@@ -1,0 +1,63 @@
+<div class="rvt-alert rvt-alert--success rvt-m-bottom-md rvt-visibility-hidden" id="settings-success" role="alertdialog" tabindex="-1" aria-hidden="true">
+  <p class="rvt-alert__message">Your settings have been successfully updated.</p>
+</div>
+<form id="auto-reply-form" style="max-width: 32rem;">
+  <fieldset aria-describedby="autoreply-hint">
+    <legend class="rvt-ts-23 rvt-text-bold">Automatic reply settings</legend>
+    <span class="rvt-ts-14 rvt-m-bottom-md rvt-display-block" id="autoreply-hint">Set an automatic reply to send while you are out of the office.</span>
+    <label for="message">Reply to messages with:</label>
+    <textarea id="message" class="rvt-m-bottom-xl"></textarea>
+  </fieldset>
+  <fieldset>
+    <legend class="">When should the message be sent?</legend>
+    <!--
+      <input type="checkbox" id="range-control">
+      <label for="range-control" class="rvt-m-right-sm">Only send message during time period:</label>
+    -->
+    <div class="rvt-grid rvt-m-top-md">
+      <div class="rvt-grid__item-4-md-up">
+        <div class="rvt-datepicker rvt-m-bottom-sm">
+          <label for="start">Start date</label>
+          <div class="rvt-datepicker__input">
+            <input type="text" autocomplete="off" data-range="range-control" id="start" aria-describedby="date-format-hint">
+            <div class="rvt-datepicker__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12.29,2H12V1a1,1,0,0,0-2,0V2H6V1A1,1,0,0,0,4,1V2H3.71A2.78,2.78,0,0,0,1,4.83v7.33A2.78,2.78,0,0,0,3.71,15h8.57A2.78,2.78,0,0,0,15,12.17V4.83A2.78,2.78,0,0,0,12.29,2ZM3.71,4H4V5H6V4h4V5h2V4h.29a.78.78,0,0,1,.71.83V7H3V4.83A.78.78,0,0,1,3.71,4Zm8.57,9H3.71A.78.78,0,0,1,3,12.17V9H13v3.17A.78.78,0,0,1,12.29,13Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rvt-grid__item-4-md-up">
+        <div class="rvt-datepicker">
+          <label for="end">End date</label>
+          <div class="rvt-datepicker__input">
+            <input type="text" autocomplete="off" data-range="range-control" id="end" aria-describedby="date-format-hint">
+            <div class="rvt-datepicker__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12.29,2H12V1a1,1,0,0,0-2,0V2H6V1A1,1,0,0,0,4,1V2H3.71A2.78,2.78,0,0,0,1,4.83v7.33A2.78,2.78,0,0,0,3.71,15h8.57A2.78,2.78,0,0,0,15,12.17V4.83A2.78,2.78,0,0,0,12.29,2ZM3.71,4H4V5H6V4h4V5h2V4h.29a.78.78,0,0,1,.71.83V7H3V4.83A.78.78,0,0,1,3.71,4Zm8.57,9H3.71A.78.78,0,0,1,3,12.17V9H13v3.17A.78.78,0,0,1,12.29,13Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="rvt-display-block rvt-ts-14 rvt-m-bottom-lg" id="date-format-hint">Type dates in the format: mm-dd-yyyy.</span>
+  </fieldset>
+  <div class="rvt-button-group rvt-m-top-xl">
+    <button class="rvt-button" role="sumbit">Save settings</button>
+  </div>
+</form>
+
+{% include partials/partial-test-case-scripts.njk %}
+
+<style>
+  .rvt-visibility-hidden {
+    visibility: hidden;
+  }
+
+  .rvt-alert:focus {
+    outline: 3px dotted #006298;
+    outline-offset: 3px;
+  }
+</style>

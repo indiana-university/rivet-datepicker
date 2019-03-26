@@ -1,0 +1,48 @@
+// Copyright (C) 2019 The Trustees of Indiana University
+// SPDX-License-Identifier: BSD-3-Clause
+
+/**
+ * A basic date input patter made up of three text inputs
+ */
+.rvt-date-input {
+  display: flex;
+
+  &__item {
+    width: 100%;
+    max-width: $xxl;
+    flex-shrink: 0;
+
+    &:not(:last-child) {
+      margin-right: $sm;
+    }
+  }
+
+  &__item--year {
+    max-width: $xxl * 2;
+  }
+}
+
+/**
+ * Rivet date picker input
+ */
+
+.rvt-datepicker {
+  &__input {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input[type="text"] {
+      background-color: transparent;
+      padding-right: $xl;
+      z-index: 1;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: $sm * .7;
+    right: $sm * .75;
+    z-index: 0;
+  }
+}

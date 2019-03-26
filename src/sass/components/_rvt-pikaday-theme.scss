@@ -1,0 +1,106 @@
+// Copyright (C) 2019 The Trustees of Indiana University
+// SPDX-License-Identifier: BSD-3-Clause
+
+/**
+ * Start Rivet Pikaday theme.
+ *
+ * See the Pikaday intitialization for how the theme is applied in
+ * in the JS pane. Read more about options in the Pikaday docs:
+ *
+ * https://github.com/dbushell/Pikaday#configuration
+ */
+
+.rivet-theme {
+  font-family: inherit;
+  margin-top: $xs;
+  border: none;
+
+  &.pika-single.is-bound {
+    box-shadow: none;
+  }
+
+  .pika-lendar {
+    border: $sm/16 solid $color-black--200;
+    border-radius: $xxs;
+    padding: $sm;
+    margin: 0;
+    width: auto;
+  }
+
+  .pika-prev:hover,
+  .pika-next:hover {
+    background-color: $color-midnight--100;
+  }
+
+  .pika-next,
+  .pika-prev {
+    border-radius: $xxs;
+  }
+
+  .pika-next {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTUuNSwxNWExLDEsMCwwLDEtLjc3LTEuNjRMOS4yLDgsNC43MywyLjY0QTEsMSwwLDAsMSw2LjI3LDEuMzZMMTEuMTMsNy4yYTEuMjUsMS4yNSwwLDAsMSwwLDEuNjFMNi4yNywxNC42NEExLDEsMCwwLDEsNS41LDE1Wk05LjYsOC40OGgwWm0wLTFoMFoiLz4KPC9zdmc+');
+  }
+
+  .pika-prev {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTEwLjUsMTVhMSwxLDAsMCwxLS43Ny0uMzZMNC44Nyw4LjhhMS4yNSwxLjI1LDAsMCwxLDAtMS42MUw5LjczLDEuMzZhMSwxLDAsMCwxLDEuNTQsMS4yOEw2LjgsOGw0LjQ3LDUuMzZBMSwxLDAsMCwxLDEwLjUsMTVaTTYuNDEsOC40N2gwWm0wLTFoMFoiLz4KPC9zdmc+');
+  }
+
+  .pika-prev,
+  .pika-next {
+    background-size: 75%;
+  }
+
+  .pika-button {
+    background-color: $color-background;
+    color: $color-text;
+    display: inline-block;
+    text-align: center;
+    border-radius: 0;
+    padding: $xs;
+  }
+
+  .pika-button:hover,
+  .pika-row.pick-whole-week:hover .pika-button {
+    background-color: $color-midnight--100;
+    color: $color-text;
+    border-radius: 0;
+  }
+
+  .pika-button:focus,
+  .pika-row.pick-whole-week:hover .pika-button {
+    background-color: $color-midnight--100;
+  }
+
+  .is-selected .pika-button,
+  .has-event .pika-button {
+    background-color: $color-action;
+    border-color: $color-action;
+    box-shadow: none;
+    color: $color-background;
+    font-weight: 400;
+  }
+
+  .pika-table thead,
+  .pika-table thead tr {
+    border-bottom: none;
+  }
+
+  .pika-table td.is-today .pika-button {
+    color: $color-action;
+    background-color: $color-midnight--100;
+  }
+
+  .pika-table th {
+    background-color: $color-background;
+    color: $color-text;
+    // text-transform: none;
+  }
+
+  .pika-table th abbr {
+    text-decoration: none;
+  }
+
+  .pika-row {
+    border-bottom: none;
+  }
+}

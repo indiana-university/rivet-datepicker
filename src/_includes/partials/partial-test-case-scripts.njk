@@ -1,0 +1,35 @@
+<script>
+document.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const simulateUpdateSettings = () => {
+    console.log('Submitted');
+
+    const successAlert = document.getElementById('settings-success');
+
+    successAlert.classList.remove('rvt-visibility-hidden');
+
+    successAlert.setAttribute('aria-hidden', 'false');
+
+    successAlert.focus();
+  }
+
+  setTimeout(simulateUpdateSettings, 1000);
+});
+
+/*
+document.addEventListener('change', event => {
+  const rangeControl = event.target.closest('#range-control');
+
+  if (!rangeControl) return;
+
+  const pickers = Array.from(document.querySelectorAll('[data-range]'));
+
+  pickers.forEach(picker => {
+    rangeControl.checked ?
+      picker.removeAttribute('disabled') :
+      picker.setAttribute('disabled', '');
+  })
+});
+*/
+</script>
