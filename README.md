@@ -4,6 +4,9 @@ A datepicker widget for Rivet that uses [Pikaday](https://dbushell.com/Pikaday/)
 [Download](https://github.com/indiana-university/rivet-datepicker/archive/master.zip) | [View the demo](https://indiana-university.github.io/rivet-datepicker/)
 
 ### Configuring a datepicker
+
+NOTE: [See the demo page](https://indiana-university.github.io/rivet-datepicker/) for more detailed implementation instructions.
+
 The Rivet calendar datepicker is built on top of [Pikaday](https://github.com/Pikaday/Pikaday), a lightweight JavaScript calendar widget, that has [lots of configuration options](https://github.com/Pikaday/Pikaday#configuration). The `RivetDatepicker` constructor acts as a small wrapper around Pikaday that includes the Rivet CSS theme for the calendar widget and a few other default options.
 
 #### Default options
