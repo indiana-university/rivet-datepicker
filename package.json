@@ -14,7 +14,7 @@
     "start": "gulp",
     "build": "npm run clean && gulp release",
     "clean": "rm -rf dist",
-    "deploy": "gulp build:docs && npx gh-pages -d docs"
+    "deploy": "gulp buildDocs && npx gh-pages -d docs"
   },
   "author": "Indiana University",
   "license": "BSD-3-Clause",
