@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rivet Datepicker test case</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://assets.uits.iu.edu/css/rivet/1.1.0/rivet.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/rivet-datepicker.css">
+  <style>
+  .rvt-typeset {
+    padding-bottom: 9rem;
+  }
+
+  .rvt-typeset h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .rvt-typeset h2 {
+    font-size: 1.75rem;
+  }
+
+  .rvt-typeset h3 {
+    font-size: 1.5rem;
+  }
+
+  .rvt-typeset h4,
+  .rvt-typeset h5,
+  .rvt-typeset h6 {
+    font-size: 1.25rem;
+  }
+
+  .rvt-typeset h1,
+  .rvt-typeset h2,
+  .rvt-typeset h3,
+  .rvt-typeset h4,
+  .rvt-typeset h5,
+  .rvt-typeset h6 {
+    font-weight: 700;
+    margin-top: 2rem;
+  }
+
+  pre {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: .25rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+  }
+
+  pre,
+  code {
+    background-color: #f7f7f7;
+  }
+
+  code {
+    font-size: 1rem;
+    font-family: 'Monaco', 'Menolo', 'Andale mono', monospace;
+    background-color: #f7f7f7;
+    display: inline-block;
+    padding: .05rem .15rem;
+    border-radius: 3px;
+    color: #d14;
+  }
+
+  .status-prototype {
+    color: #df3603;
+  }
+
+  .status-alpha {
+    color: #f5bb17;
+  }
+
+  .status-beta {
+    color: #006298;
+  }
+
+  .status-ready {
+    color: #008a28;
+  }
+</style>
+</head>
+<body>
+  <div class="rvt-container rvt-container--center rvt-container--sophomore rvt-m-top-xxl rvt-m-bottom-xxl rvt-typeset">
+    <span class="rvt-text-uppercase rvt-text-bold rvt-color-orange"></span>
+    <h1 class="rvt-m-top-remove">Rivet Datepicker test case</h1>
+    <p class="rvt-m-top-xxs rvt-m-bottom-xxl rvt-ts-20">Date entry patterns for Rivet including a calendar datepicker</p>
+    <div class="rvt-grid">
+      <div class="rvt-grid__item-9-md-up" id="demo-container">
+        <div class="rvt-alert rvt-alert--success rvt-m-bottom-md rvt-visibility-hidden" id="settings-success" role="alertdialog" tabindex="-1" aria-hidden="true">
+  <p class="rvt-alert__message">Your settings have been successfully updated.</p>
+</div>
+<form id="auto-reply-form" style="max-width: 32rem;">
+  <fieldset aria-describedby="autoreply-hint">
+    <legend class="rvt-ts-23 rvt-text-bold">Automatic reply settings</legend>
+    <span class="rvt-ts-14 rvt-m-bottom-md rvt-display-block" id="autoreply-hint">Set an automatic reply to send while you are out of the office.</span>
+    <label for="message">Reply to messages with:</label>
+    <textarea id="message" class="rvt-m-bottom-xl"></textarea>
+  </fieldset>
+  <fieldset>
+    <legend class="">When should the message be sent?</legend>
+    <!--
+      <input type="checkbox" id="range-control">
+      <label for="range-control" class="rvt-m-right-sm">Only send message during time period:</label>
+    -->
+    <div class="rvt-grid rvt-m-top-md">
+      <div class="rvt-grid__item-4-md-up">
+        <div class="rvt-datepicker rvt-m-bottom-sm">
+          <label for="start">Start date</label>
+          <div class="rvt-datepicker__input">
+            <input type="text" autocomplete="off" data-range="range-control" id="start" aria-describedby="date-format-hint">
+            <div class="rvt-datepicker__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12.29,2H12V1a1,1,0,0,0-2,0V2H6V1A1,1,0,0,0,4,1V2H3.71A2.78,2.78,0,0,0,1,4.83v7.33A2.78,2.78,0,0,0,3.71,15h8.57A2.78,2.78,0,0,0,15,12.17V4.83A2.78,2.78,0,0,0,12.29,2ZM3.71,4H4V5H6V4h4V5h2V4h.29a.78.78,0,0,1,.71.83V7H3V4.83A.78.78,0,0,1,3.71,4Zm8.57,9H3.71A.78.78,0,0,1,3,12.17V9H13v3.17A.78.78,0,0,1,12.29,13Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rvt-grid__item-4-md-up">
+        <div class="rvt-datepicker">
+          <label for="end">End date</label>
+          <div class="rvt-datepicker__input">
+            <input type="text" autocomplete="off" data-range="range-control" id="end" aria-describedby="date-format-hint">
+            <div class="rvt-datepicker__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M12.29,2H12V1a1,1,0,0,0-2,0V2H6V1A1,1,0,0,0,4,1V2H3.71A2.78,2.78,0,0,0,1,4.83v7.33A2.78,2.78,0,0,0,3.71,15h8.57A2.78,2.78,0,0,0,15,12.17V4.83A2.78,2.78,0,0,0,12.29,2ZM3.71,4H4V5H6V4h4V5h2V4h.29a.78.78,0,0,1,.71.83V7H3V4.83A.78.78,0,0,1,3.71,4Zm8.57,9H3.71A.78.78,0,0,1,3,12.17V9H13v3.17A.78.78,0,0,1,12.29,13Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="rvt-display-block rvt-ts-14 rvt-m-bottom-lg" id="date-format-hint">Type dates in the format: mm-dd-yyyy.</span>
+  </fieldset>
+  <div class="rvt-button-group rvt-m-top-xl">
+    <button class="rvt-button" role="sumbit">Save settings</button>
+  </div>
+</form>
+<script>
+document.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const simulateUpdateSettings = () => {
+    console.log('Submitted');
+
+    const successAlert = document.getElementById('settings-success');
+
+    successAlert.classList.remove('rvt-visibility-hidden');
+
+    successAlert.setAttribute('aria-hidden', 'false');
+
+    successAlert.focus();
+  }
+
+  setTimeout(simulateUpdateSettings, 1000);
+});
+
+/*
+document.addEventListener('change', event => {
+  const rangeControl = event.target.closest('#range-control');
+
+  if (!rangeControl) return;
+
+  const pickers = Array.from(document.querySelectorAll('[data-range]'));
+
+  pickers.forEach(picker => {
+    rangeControl.checked ?
+      picker.removeAttribute('disabled') :
+      picker.setAttribute('disabled', '');
+  })
+});
+*/
+</script>
+<style>
+  .rvt-visibility-hidden {
+    visibility: hidden;
+  }
+
+  .rvt-alert:focus {
+    outline: 3px dotted #006298;
+    outline-offset: 3px;
+  }
+</style>
+      </div>
+    </div>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+  <script src="https://assets.uits.iu.edu/javascript/rivet/1.1.0/rivet.min.js"></script>
+  <script src="../js/rivet-datepicker.js"></script>
+  <script>
+hljs.initHighlightingOnLoad();
+
+function formatRivetDate (date) {
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return month + '-' + day + '-' + year;
+}
+
+const startDate = new RivetDatepicker({
+  field: document.getElementById('start'),
+  yearRange: [1950, 2019],
+  toString: function(date, format) {
+    return formatRivetDate(date);
+  }
+});
+
+const endDate = new RivetDatepicker({
+  field: document.getElementById('end'),
+  toString: function(date, format) {
+    return formatRivetDate(date);
+  }
+});
+
+const timeStart = new RivetDatepicker({
+  field: document.getElementById('time-demo-start-day'),
+  toString: function(date, format) {
+    return formatRivetDate(date);
+  }
+});
+
+const timeEnd = new RivetDatepicker({
+  field: document.getElementById('time-demo-end-day'),
+  toString: function(date, format) {
+    return formatRivetDate(date);
+  }
+});
+</script>
+</body>
+</html>
