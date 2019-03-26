@@ -1,7 +1,7 @@
 {
   "name": "rivet-datepicker",
   "version": "0.1.0",
-  "description": "Date entry patterns for Rivet including a calendar datepicker",
+  "description": "A datepicker widget for Rivet that uses Pikaday",
   "repository": {
     "type": "git",
     "url": "https://github.com/indiana-university/rivet-datepicker"
