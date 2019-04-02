@@ -63,8 +63,7 @@ function compileSass() {
       sass({
         outputStyle: 'expanded',
         includePaths: [
-          './node_modules/rivet-uits/sass/',
-          './node_modules/pikaday/scss/'
+          './node_modules/'
         ]
       }).on('error', sass.logError)
     )
