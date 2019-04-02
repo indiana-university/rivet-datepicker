@@ -1,4 +1,4 @@
-/*! rivet-datepicker - @version 0.1.0-alpha */
+/*! rivet-datepicker - @version 0.1.0 */
 
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('moment')) :
@@ -1161,7 +1161,7 @@
 	 * SPDX-License-Identifier: BSD-3-Clause
 	 */
 
-	function RivetDatePicker(options) {
+	function RivetDatepicker(options) {
 	  // Default options
 	  var defaults = {
 	    theme: 'rivet-theme',
@@ -1176,7 +1176,7 @@
 	  this.picker = new pikaday(settings);
 	}
 
-	return RivetDatePicker;
+	return RivetDatepicker;
 
 })));
 //# sourceMappingURL=rivet-datepicker.js.map

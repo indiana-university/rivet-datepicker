@@ -81,14 +81,22 @@ function compileJS() {
   return rollup
     .rollup({
       input: './src/js/' + package.name + '.js',
-      plugins: [babel(), rollupCommonJs(), rollupResolve()]
+      plugins: [
+        babel(),
+        rollupCommonJs(),
+        rollupResolve()
+      ],
+      external: ['moment']
     })
     .then(bundle => {
       return bundle.write({
         file: './docs/js/' + package.name + '.js',
         format: 'umd',
         name: 'RivetDatepicker',
-        sourcemap: true
+        sourcemap: true,
+        globals: {
+          moment: 'moment'
+        }
       });
     });
 }
