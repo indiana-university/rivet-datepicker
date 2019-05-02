@@ -55,7 +55,7 @@ The Rivet datepicker uses the `aria-describedby` attribute to associate date for
 
 ```html
 <div class="rvt-datepicker rvt-width-sm rvt-m-bottom-sm">
-  <label for="hs-date">Graduation date</label>
+  <label for="grad-date">Graduation date</label>
   <span class="rvt-ts-14" id="grad-date-hint">Type date in the format: mm-dd-yyyy</span>
   <div class="rvt-datepicker__input" aria-hidden="true">
     <input autocomplete="off" type="text" id="grad-date" aria-describedby="grad-date-hint">
