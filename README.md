@@ -16,13 +16,6 @@ You can [download the Rivet datepicker CSS and JavaScript](https://github.com/in
 
 Make sure you include the Rivet datepicker CSS and JavaScript *after* the Rivet core CSS and JavaScript.
 
-### Using NPM and Sass
-If you are using NPM and [Rivet's Sass](https://rivet.iu.edu/getting-started/sass/), you can use the datepicker styles by importing them from your `node_modules` folder:
-
-```css
-@import "/node_modules/rivet-shell/sass/rivet-datepicker.scss";
-```
-
 ## Basic date input
 Using three inputs is the quickest and most reliable way for users to enter dates into forms.
 
