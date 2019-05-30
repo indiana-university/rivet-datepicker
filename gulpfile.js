@@ -1,19 +1,21 @@
 const { dest, series, parallel, src, watch } = require('gulp');
-const gutil = require('gulp-util');
+const { eslint } = require('rollup-plugin-eslint');
+const autoprefixer = require('autoprefixer');
+const babel = require('rollup-plugin-babel');
+const browserSync = require('browser-sync').create();
 const cp = require('child_process');
-const sass = require('gulp-sass');
+const cssnano = require('gulp-cssnano');
+const gutil = require('gulp-util');
+const header = require('gulp-header');
+const postcss = require('gulp-postcss');
+const pump = require('pump');
+const rename = require('gulp-rename');
 const rollup = require('rollup');
 const rollupCommonJs = require('rollup-plugin-commonjs');
 const rollupResolve = require('rollup-plugin-node-resolve');
-const babel = require('rollup-plugin-babel');
-const browserSync = require('browser-sync').create();
-const header = require('gulp-header');
+const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
-const pump = require('pump');
-const rename = require('gulp-rename');
-const postcss = require('gulp-postcss');
-const cssnano = require('gulp-cssnano');
-const autoprefixer = require('autoprefixer');
+
 const package = require('./package.json');
 
 // Create the string for the verion number banner.
@@ -76,11 +78,37 @@ function compileSass() {
  * https://rollupjs.org/guide/en#gulp
  */
 
-function compileJS() {
+function compileJSDev() {
   return rollup
     .rollup({
       input: './src/js/' + package.name + '.js',
       plugins: [
+        eslint({ throwOnError: false }),
+        babel(),
+        rollupCommonJs(),
+        rollupResolve()
+      ],
+      external: ['moment']
+    })
+    .then(bundle => {
+      return bundle.write({
+        file: './docs/js/' + package.name + '.js',
+        format: 'umd',
+        name: 'RivetDatepicker',
+        sourcemap: true,
+        globals: {
+          moment: 'moment'
+        }
+      });
+    });
+}
+
+function compileJSBuild() {
+  return rollup
+    .rollup({
+      input: './src/js/' + package.name + '.js',
+      plugins: [
+        eslint({ throwOnError: false }),
         babel(),
         rollupCommonJs(),
         rollupResolve()
@@ -167,7 +195,7 @@ function serve(callback) {
   );
 
   watch('src/sass/**/*.scss', { ignoreInitial: false }, compileSass);
-  watch('src/js/**/*.js', { ignoreInitial: false }, compileJS);
+  watch('src/js/**/*.js', { ignoreInitial: false }, compileJSDev);
 
   callback();
 }
@@ -175,12 +203,12 @@ function serve(callback) {
 exports.buildDocs = series(
   compileHTML,
   compileSass,
-  compileJS
+  compileJSBuild
 );
 
 exports.release = series(
   compileHTML,
-  compileJS,
+  compileJSBuild,
   compileSass,
   copyCSS,
   copyJS,
